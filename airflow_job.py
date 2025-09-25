@@ -101,8 +101,7 @@ with DAG(
 
     )
 
-    execution_date >> run_spark_job
     
-    # execution_date >>update_customers >> insert_customers >> run_spark_job
+    execution_date >>update_customers >> insert_customers >> run_spark_job
 
 

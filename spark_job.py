@@ -96,13 +96,13 @@ def load_to_rentals_fact(execution_date):
                             ,(col('cust.customer_id')==col('rentals.customer_id'))
                             )
    fact_rentals_df = fact_rentals_df.alias("fact") \
-        .join(date_df.alias("start_date_dim"), col("fact.start_date") == col("start_date_dim.date"), "left") \
+        .join(date_df.alias("start_date_dim"), col("fact.rental_period.start_date") == col("start_date_dim.date"), "left") \
         .withColumnRenamed("date_key", "start_date_key") \
         .drop("start_date")
 
     # Join with date_dim for end_date
    fact_rentals_df = fact_rentals_df.alias("fact") \
-        .join(date_df.alias("end_date_dim"), col("fact.end_date") == col("end_date_dim.date"), "left") \
+        .join(date_df.alias("end_date_dim"), col("fact.rental_period.end_date") == col("end_date_dim.date"), "left") \
         .withColumnRenamed("date_key", "end_date_key") \
         .drop("end_date")    
 
