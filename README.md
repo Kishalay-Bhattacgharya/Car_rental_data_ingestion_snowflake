@@ -9,4 +9,4 @@
 * Wrote a spark application which will be ingesting data into snowflake table and will be pushed to dataproc cluster by above-mentioned airflow workflow.
 
 ### Tools involved
-*** GCS,Dataproc,Spark,Snowflake,Composer(Airflow) ***
+*GCS,Dataproc,Spark,Snowflake,Composer(Airflow)*
